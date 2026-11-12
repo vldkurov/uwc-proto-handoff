@@ -1,0 +1,629 @@
+{% extends 'public_p/public_base.html' %}
+{% load filters %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ page.title|default:"Default Page" }}{% endblock title %}
+
+{% block content %}
+
+    <style>
+        @media (max-width: 768px) {
+            .hero-mobile-top {
+                top: 20% !important;
+            }
+        }
+    </style>
+
+    {% for item in sections %}
+
+        {% if item.section.title|lower == 'hero' or item.section.title|lower == 'головний банер' %}
+            <div class="section" style="
+                 height: 600px;
+                 width: 100vw;
+                 position: relative;
+                 left: calc(-50vw + 50%);">
+                {% for content in item.contents %}
+                    {% if content.type == 'image' %}
+                        <div id="content-{{ content.content.id }}"
+                             style="
+                                     position: absolute;
+                                     top: 0;
+                                     left: 0;
+                                     width: 100%;
+                                     height: 100%;
+                                     background-size: cover;
+                                     background-position: center;
+                                     background-repeat: no-repeat;
+                                     background-image: url('{{ content.content.content.url }}');
+                                     filter: brightness(50%);
+                                     z-index: 1;
+                                     ">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                {% for content in item.contents %}
+                    {% if content.type == 'text' %}
+                        {% if content.content|stringformat:"s" == "Content 1.3" %}
+                            <div id="container-fluid content-{{ content.content.id }}"
+                                 class="position-absolute w-100 top-50 hero-mobile-top start-0 d-flex justify-content-center align-items-center z-2">
+                                <div class="container-fluid d-flex justify-content-end align-items-center px-5">
+                                    <p class="fw-semibold fs-1 text" style="color: white;">
+                                        {{ content.content.content }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if content.content|stringformat:"s" == "Content 1.1" %}
+                            <div id="content-{{ content.content.id }}"
+                                 class="position-absolute w-100 bottom-0 start-0 d-flex justify-content-center align-items-center z-2"
+                                 style="background-color: #FFD700">
+                                <div style="padding-left: 35px; padding-right: 35px;"
+                                     class="container-fluid d-flex justify-content-between align-items-center pt-4 pb-4">
+                                    <p class="w-100 fw-semibold m-0 fs-2 text" style="color: #0057B8;">
+                                        {{ content.content.content }}
+                                    </p>
+                                    <a class="btn shadow-sm text-nowrap" style="background-color: #0057B8; color: white"
+                                       aria-current="page"
+                                       href="{% url 'create_donation' %}">{% trans 'Donate now' %}
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'ukraine permission extension' or item.section.title|lower == 'продовження дозволу для українців' %}
+            <div class="section mt-1 p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="fw-semibold m-0 fs-3 text">{% trans 'Need help applying for Ukraine Permission Extension scheme?' %}
+                        <a
+                                href="https://outlook.office.com/book/UPE1@ukrainianwelcomecentre.org/"
+                                target="_blank" rel="noopener noreferrer">{% trans 'Book your slot here.' %}</a></p>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'our mission' or item.section.title|lower == 'наша місія' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 3.1" %}
+                                        <div id="content-{{ content.content.id }}">
+{#                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>#}
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 3.2" %}
+                                        <div id="content-{{ content.content.id }}">
+{#                                            <p class="fw-light">{{ content.content.content }}</p>#}
+                                        <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='about-us' %}">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 3.4" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'pre-arrival and visas' or item.section.title|lower == 'підготовка до подорожі та візові питання' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 2.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 2.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 2.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 2.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='pre-arrivals-and-visas' %}">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 2.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'will you help?' or item.section.title|lower == 'ви до поможете?' %}
+            <div class="section mt-1 position-relative"
+                 style="width: 100vw;
+                 left: calc(-50vw + 50%);">
+
+                {% for content in item.contents %}
+                    {% if content.type == 'image' %}
+                        {% if content.content|stringformat:"s" == "Content 3.1" %}
+                            <div id="content-{{ content.content.id }}"
+                                 class="position-absolute w-100 h-100"
+                                 style="background-size: cover;
+                                         background-position: center;
+                                         background-repeat: no-repeat;
+                                         background-image: url('{{ content.content.content.url }}');
+                                         filter: brightness(50%);
+                                         z-index: 1;">
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for content in item.contents %}
+                    {% if content.type == 'text' %}
+                        {% if content.content|stringformat:"s" == "Content 3.2" %}
+                            <div id="content-{{ content.content.id }}"
+                                 class="container-fluid w-100 h-auto d-flex justify-content-center align-items-center z-2 position-relative">
+                                <div class="container-fluid">
+                                    <div class="row g-0 gx-2 text-start">
+                                        <div class="col-md-8 p-3">
+                                            <h3 class="text-light fw-semibold">{{ item.section.title }}</h3>
+                                            <p class="fw-light fs-6 text text-wrap text-break m-0"
+                                               style="color: white;">
+                                                {{ content.content.content }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4 p-3 d-flex justify-content-end align-items-center">
+                                            <a class="btn shadow-sm text-nowrap"
+                                               style="background-color: #FFD800; color: #0057B8"
+                                               aria-current="page"
+                                               href="{% url 'create_donation' %}">{% trans 'Donate now' %}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'essentials upon arrival' or item.section.title|lower == 'найнеобхідніше після прибуття' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 4.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 4.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 4.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 4.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 4.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='after-you-are-here' %}#essentials-upon-arrival">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'long-term living' or item.section.title|lower == 'довгострокове проживання' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 5.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 5.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 5.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 5.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='after-you-are-here' %}#long-term-living">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 5.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'ukrainian heritage' or item.section.title|lower == 'українська спадщина' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 6.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 6.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 6.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 6.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 6.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='ukrainian-heritage' %}">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'sponsor a refugee' or item.section.title|lower == 'спонсоруйте біженця' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 7.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 7.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 7.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 7.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='sponsors-hosts' %}">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 7.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'volunteer' or item.section.title|lower == 'волонтер' %}
+            <div class="section mt-1 p-4" style="background-color: #FFFFFF">
+                <div class="row">
+                    <div class="col-md-12 col-lg text-center">
+                        {% for content in item.contents %}
+                            {% if content.type == 'image' %}
+                                {% if content.content|stringformat:"s" == "Content 8.5" %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}"
+                                             alt="{{ content.content.title }}"
+                                             class="img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;"
+                                        >
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-12 col-lg">
+                        <div class="row">
+                            <p style="color: #0057B8;">{{ item.section.title }}</p>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    {% if content.content|stringformat:"s" == "Content 8.1" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <h3 class="fw-bolder">{{ content.content.content }}</h3>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 8.2" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 8.3" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                    {% if content.content|stringformat:"s" == "Content 8.4" %}
+                                        <div id="content-{{ content.content.id }}">
+                                            <p class="fw-light">{{ content.content.content }}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <p>
+                                <a class="btn shadow-sm" style="background-color: #0057B8; color: white"
+                                   href="{% url 'page' slug='about-us' %}#our-volunteers">
+                                    {% trans 'Learn More' %}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.section.title|lower == 'newsletter' or item.section.title|lower == 'інформаційний бюллетень' %}
+            <div class="section mt-1 position-relative"
+                 style="
+                             height: 600px;
+                             width: 100vw;
+                             left: calc(-50vw + 50%);"
+            >
+                {% for content in item.contents %}
+                    {% if content.type == 'image' %}
+                        <div id="content-{{ content.content.id }}"
+                             style="
+                                     position: absolute;
+                                     top: 0;
+                                     left: 0;
+                                     width: 100%;
+                                     height: 100%;
+                                     background-size: cover;
+                                     background-position: center;
+                                     background-repeat: no-repeat;
+                                     background-image: url('{{ content.content.content.url }}');
+                                     filter: brightness(50%);
+                                     z-index: 1;
+                                     ">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                {% for content in item.contents %}
+                    {% if content.type == 'text' %}
+                        {% if content.content|stringformat:"s" == "Content 9.3" %}
+                            <div id="content-{{ content.content.id }}"
+                                 class="container-fluid position-absolute w-100 top-0 start-0 d-flex justify-content-center align-items-center z-2"
+                                 style="background-color: #FFD700">
+                                <div class="d-flex w-100 justify-content-between align-items-center px-3 py-5">
+                                    <p class="fw-normal fs-4 text m-0" style="color: #0057B8;">
+                                        {{ content.content.content }}
+                                    </p>
+                                    <form action="#" method="POST" class="d-flex align-items-center p-0 m-0">
+                                        {% csrf_token %}
+                                        <label class="me-1">
+                                            <input type="text" name="first_name" class="form-control"
+                                                   placeholder="{% trans 'First Name' %}" required>
+                                        </label>
+                                        <label class="me-1">
+                                            <input type="text" name="last_name" class="form-control"
+                                                   placeholder="{% trans 'Last Name' %}" required>
+                                        </label>
+                                        <label class="me-1">
+                                            <input type="email" name="email" class="form-control "
+                                                   placeholder="{% trans 'Email Address' %}" required>
+                                        </label>
+                                        <button type="submit" class="btn shadow-sm"
+                                                style="background-color: #0057B8; color: white;">
+                                            {% trans 'Subscribe' %}
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if content.content|stringformat:"s" == "Content 9.2" %}
+                            <div id="content-{{ content.content.id }}"
+                                 class="position-absolute w-100 top-50 start-0 z-2">
+                                <div class="container d-flex flex-column justify-content-center align-items-center">
+                                    <p class="fw-semibold m-0 fs-1 text text-light">
+                                        {{ content.content.content }}
+                                    </p>
+                                    <a class="btn btn-lg shadow-sm text-nowrap"
+                                       style="background-color: #0057B8; color: white"
+                                       aria-current="page"
+                                       href="{% url 'create_donation' %}">{% trans 'Donate now' %}
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock content %}

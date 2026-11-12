@@ -1,0 +1,30 @@
+{% extends 'admin_p/admin_base.html' %}
+{% load markdownify %}
+{% load i18n %}
+
+{% block title %}{% trans 'Search ' %}{% endblock title %}
+{% block content %}
+    {% if query %}
+        <h1>Sections containing "{{ query }}"</h1>
+        <h3>
+            {% with results.count as total_result %}
+                Found {{ total_result }} result{{ total_result|pluralize }}.
+            {% endwith %}
+        </h3>
+        {% for section in results %}
+            <h4>
+                <a href="{{ section.get_absolute_url }}">{{ section.title }}</a>
+            </h4>
+            {{ section.title|markdownify|truncatewords_html:12 }}
+        {% empty %}
+            <p>{% trans 'No results found.' %}</p>
+        {% endfor %}
+        <p><a href="{% url 'search' %}">Search again</a></p>
+    {% else %}
+        <h1>{% trans 'Search for sections' %}</h1>
+        <form action="" method="get">
+            {{ form.as_p }}
+            <input type="submit" value="Search">
+        </form>
+    {% endif %}
+{% endblock content %}

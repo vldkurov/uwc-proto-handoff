@@ -1,0 +1,142 @@
+{% extends "public_p/public_base.html" %}
+{% load i18n %}
+{% block title %}{% trans 'Locations' %}{% endblock title %}
+{% block content %}
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={{ googlemaps_api_key }}&v=beta&callback=initMap">
+    </script>
+    <script>
+        const MAP_CENTER = {lat: 51.5074, lng: -0.1278};
+        const MAP_ZOOM = 7;
+
+        function generateLocationContent(location) {
+            return `
+                <div>
+                    <h4>${location.title}</h4>
+                    ${location.parish_priest ? `<p><b>Parish Priest:</b> ${location.parish_priest}</p>` : ''}
+                    ${location.branch_chair ? `<p><b>Branch Chair:</b> ${location.branch_chair}</p>` : ''}
+                    ${location.branch_secretary ? `<p><b>Branch Secretary:</b> ${location.branch_secretary}</p>` : ''}
+                    <p><b>Address:</b> ${location.formatted_address}</p>
+                    <p><b>Details:</b> ${location.other_details || ''}</p>
+                    <p><b>Website:</b> <a href="${location.url}" target="_blank" rel="noopener noreferrer">${location.url}</a></p>
+                    <p><b>Phones:</b></p>
+                    <ul>${location.phones.map(phone => `<li><a href="tel:${phone}">${phone}</a></li>`).join('')}</ul>
+                    <p><b>Emails:</b></p>
+                    <ul>${location.emails.map(email => `<li><a href="mailto:${email}">${email}</a></li>`).join('')}</ul>
+                </div>
+            `;
+        }
+
+        function createMarker(map, location) {
+            const marker = new google.maps.Marker({
+                position: {lat: location.lat, lng: location.lng},
+                map: map,
+                title: location.title,
+            });
+
+            const infoContent = generateLocationContent(location);
+            const infoWindow = new google.maps.InfoWindow({
+                content: infoContent,
+                ariaLabel: location.title,
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.open({anchor: marker, map});
+            });
+
+            return {marker, infoWindow};
+        }
+
+        function handleHashNavigation(markers, map) {
+            const anchor = window.location.hash.substring(1);
+            if (anchor && markers[anchor]) {
+                const {marker, infoWindow} = markers[anchor];
+                infoWindow.open({anchor: marker, map});
+                map.panTo(marker.getPosition());
+            }
+        }
+
+        function initMap() {
+            const locations = {{ locations|safe }};
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: MAP_ZOOM,
+                center: MAP_CENTER,
+            });
+
+            const markers = {};
+            locations.forEach(location => {
+                markers[`branch-${location.id}`] = createMarker(map, location);
+            });
+
+            handleHashNavigation(markers, map);
+        }
+
+        window.initMap = initMap;
+    </script>
+
+    <div class="container mt-4 py-4">
+
+        <div>
+
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <ul class="nav nav-tabs flex-column" id="divisionTabs" role="tablist">
+                        {% for division in divisions %}
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link text-uppercase fw-medium {% if current_division == division %}active{% endif %}"
+                                        id="tab-{{ division.id }}"
+                                        href="{% url 'locations' slug=division.slug %}"
+                                        style="font-size: 0.8rem;"
+                                >
+                                    {{ division.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-9 p-2 rounded-end-2" style="background-color: #f8f9fa; border-color: transparent;">
+                        <div class="tab-content">
+                            {% if current_division.description %}
+                                <div class="mb-3 p-3 bg-white border rounded-2">
+                                    {{ current_division.description|linebreaks }}
+                                </div>
+                            {% endif %}
+                            <div style="height: 500px; width: 100%; overflow: hidden;" class="border rounded-2">
+                                <div id="map" style="height: 100%;"></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+        {#    ==================================== #}
+
+        {#        <div class="row">#}
+        {#            <div class="col-md-3">#}
+        {#                <ul class="nav flex-column nav-pills" id="divisionTabs" role="tablist">#}
+        {#                    {% for division in divisions %}#}
+        {#                        <li class="nav-item">#}
+        {#                            <a#}
+        {#                                    class="nav-link {% if current_division == division %}active{% endif %}"#}
+        {#                                    id="tab-{{ division.id }}"#}
+        {#                                    href="{% url 'locations' slug=division.slug %}"#}
+        {#                            >#}
+        {#                                {{ division.title }}#}
+        {#                            </a>#}
+        {#                        </li>#}
+        {#                    {% endfor %}#}
+        {#                </ul>#}
+        {#            </div>#}
+        {#            <div class="col-md-9">#}
+        {#                <div class="tab-content">#}
+        {#                    <div style="height: 500px; width: 100%; overflow: hidden;" class="border rounded-2">#}
+        {#                        <div id="map" style="height: 100%;"></div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
+
+    </div>
+{% endblock content %}

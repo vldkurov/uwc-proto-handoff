@@ -1,0 +1,115 @@
+{% extends 'public_p/public_base.html' %}
+{% load i18n %}
+{% load static %}
+{% load markdownify %}
+{% load filters %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center pt-lg-5">
+        <div class="col-lg-10 col-xl-9">
+            {% block page_header %}
+                <h1 class="mb-5 text-center">{{ page.title }}</h1>
+            {% endblock %}
+
+            {% for item in sections %}
+                <section class="section mb-5 pb-4 border-bottom last-child-no-border" id="{{ item.section.title|slugify }}">
+                    <h2 class="h3 mb-4 text-primary">{{ item.section.title }}</h2>
+                    
+                    <div class="section-content">
+                        {% for content in item.contents %}
+                            {% if content.type == 'text' %}
+                                <div id="content-{{ content.content.id }}" class="mb-3 text-break">
+                                    {% if content.content.content|is_email %}
+                                        <a href="mailto:{{ content.content.content }}">{{ content.content.content }}</a>
+                                    {% else %}
+                                        {{ content.content.content|markdownify }}
+                                    {% endif %}
+                                </div>
+                            {% elif content.type == 'image' %}
+                                <div id="content-{{ content.content.id }}" class="mb-4 text-center">
+                                    <figure class="figure w-100">
+                                        <img src="{{ content.content.content.url }}" 
+                                             alt="{{ content.content.title }}"
+                                             class="figure-img img-fluid rounded shadow-sm"
+                                             style="max-height: 500px; width: auto; object-fit: contain;">
+                                        {% if content.content.title and not content.content.title|slugify|slice:":7" == "content" %}
+                                            <figcaption class="figure-caption">{{ content.content.title }}</figcaption>
+                                        {% endif %}
+                                    </figure>
+                                </div>
+                            {% elif content.type == 'file' %}
+                                <div id="content-{{ content.content.id }}" class="mb-3">
+                                    <a href="{{ content.content.content.url }}" class="btn btn-outline-secondary btn-sm" download>
+                                        <i class="bi bi-download me-2"></i>{{ content.content.title|default:_("Download File") }}
+                                    </a>
+                                </div>
+                            {% elif content.type == 'video' %}
+                                <div id="content-{{ content.content.id }}" class="mb-4">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="{{ content.content.content }}" title="{{ content.content.title }}" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            {% elif content.type == 'url' %}
+                                <div id="content-{{ content.content.id }}" class="mb-3">
+                                    <a href="{{ content.content.content }}" target="_blank" class="link-primary text-decoration-none">
+                                        <i class="bi bi-link-45deg me-1"></i>{% trans "Click here to open the link" %}
+                                    </a>
+                                </div>
+                            {% elif content.type == 'iframe' %}
+                                <div id="content-{{ content.content.id }}" class="ratio ratio-16x9 mb-4">
+                                    {{ content.content.content|safe }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+            {% empty %}
+                <div class="text-center py-5">
+                    <p class="text-muted">{% trans 'No content available for this page.' %}</p>
+                </div>
+            {% endfor %}
+
+            <div class="mt-5 pt-3 border-top text-center mb-5">
+                <a href="{% url 'home' %}" class="btn btn-link text-decoration-none">
+                    <i class="bi bi-arrow-left me-2"></i>{% trans 'Back to Home' %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .last-child-no-border:last-of-type {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+    }
+    .section-content p:last-child {
+        margin-bottom: 0;
+    }
+    .text-primary {
+        color: #0057B8 !important;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+    <script defer>
+        $(window).on('load', function () {
+            const anchor = window.location.hash;
+            if (anchor) {
+                const target = $(anchor);
+                if (target.length) {
+                    target.addClass("bg-warning-subtle rounded p-3");
+                    const headerHeight = $('header nav.navbar').outerHeight() || 0;
+                    let scrollTo = target.offset().top - headerHeight - 20;
+                    scrollTo = Math.max(0, scrollTo);
+                    $('html, body').animate({scrollTop: scrollTo}, 800);
+                    setTimeout(function () {
+                        target.removeClass("bg-warning-subtle rounded p-3");
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+{% endblock %}

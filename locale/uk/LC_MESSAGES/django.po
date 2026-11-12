@@ -1,0 +1,1272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-15 18:45+0000\n"
+"PO-Revision-Date: 2025-07-18 10:25+0000\n"
+"Last-Translator:   <vokur@msn.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: admin_pages/forms.py:31
+msgid "This field is required."
+msgstr "Це поле є обов'язковим для заповнення."
+
+#: admin_pages/forms.py:33
+msgid "Title must be provided."
+msgstr "Необхідно вказати назву."
+
+#: admin_pages/forms.py:58 public_pages/forms.py:6
+#: templates/admin_p/admin_base.html:76 templates/admin_p/admin_base.html:78
+#: templates/public_p/public_base.html:275
+#: templates/public_p/public_base.html:278
+#: templates/public_p/public_base.html:451
+#: templates/public_p/public_base.html:455
+msgid "Search"
+msgstr "Пошук"
+
+#: admin_pages/models.py:38
+msgid "Page Title"
+msgstr "Назва сторінки"
+
+#: admin_pages/models.py:45
+msgid "Page"
+msgstr "Сторінка"
+
+#: admin_pages/models.py:46 templates/admin_p/admin_base.html:50
+msgid "Pages"
+msgstr "Сторінки"
+
+#: admin_pages/models.py:88
+msgid "Section Title"
+msgstr "Заголовок розділу"
+
+#: admin_pages/models.py:90
+msgid "Section Title Draft"
+msgstr "Проект назви розділу"
+
+#: admin_pages/models.py:106
+msgid "Section"
+msgstr "Розділ"
+
+#: admin_pages/models.py:107
+msgid "Sections"
+msgstr "Розділи"
+
+#: admin_pages/models.py:160 admin_pages/models.py:242
+msgid "Content"
+msgstr "Вміст"
+
+#: admin_pages/models.py:161
+msgid "Contents"
+msgstr "Зміст"
+
+#: admin_pages/models.py:243
+msgid "Content Draft"
+msgstr "Чернетка змісту"
+
+#: admin_pages/models.py:266
+msgid "Iframe Embed HTML"
+msgstr "iframe Вставити HTML"
+
+#: admin_pages/models.py:267
+msgid "Iframe Embed HTML Draft"
+msgstr "Чернетка HTML для вставки iframe"
+
+#: admin_pages/views.py:247
+msgid "Cannot delete a published section."
+msgstr "Неможливо видалити опублікований розділ."
+
+#: admin_pages/views.py:272
+msgid "This section is already published."
+msgstr "Цей розділ уже опубліковано."
+
+#: admin_pages/views.py:277
+msgid "Please confirm all content updates before publishing."
+msgstr "Підтвердьте всі оновлення вмісту перед публікацією."
+
+#: admin_pages/views.py:291
+msgid "Section published successfully."
+msgstr "Розділ успішно опубліковано."
+
+#: admin_pages/views.py:305 admin_pages/views.py:314
+msgid "Only published sections can be unpublished."
+msgstr "Лише опубліковані розділи можна скасувати."
+
+#: admin_pages/views.py:358
+msgid "Invalid model name."
+msgstr "Недійсна назва моделі."
+
+#: admin_pages/views.py:635
+msgid "Please confirm all content updates (EN and UK) before displaying."
+msgstr "Будь ласка, підтвердьте всі оновлення вмісту (EN та UK) перед показом."
+
+#: admin_pages/views.py:649
+msgid "Please confirm all content updates before displaying."
+msgstr "Підтвердьте всі оновлення вмісту перед показом."
+
+#: admin_pages/views.py:662
+msgid "Content displayed successfully."
+msgstr "Вміст успішно відображено."
+
+#: admin_pages/views.py:695
+msgid "Content hidden successfully."
+msgstr "Вміст успішно приховано."
+
+#: admin_pages/views.py:766
+msgid "You do not have permission to change the section order."
+msgstr "Ви не маєте дозволу змінювати порядок розділів."
+
+#: admin_pages/views.py:793 admin_pages/views.py:839
+msgid "Request data is empty or invalid."
+msgstr "Дані запиту порожні або недійсні."
+
+#: admin_pages/views.py:802
+msgid "Invalid section ID provided."
+msgstr "Надано недійсний ідентифікатор розділу."
+
+#: admin_pages/views.py:808
+msgid "Section ID not found."
+msgstr "Ідентифікатор розділу не знайдено."
+
+#: admin_pages/views.py:829
+msgid "You do not have permission to change the content order."
+msgstr "Ви не маєте дозволу змінювати порядок вмісту."
+
+#: admin_pages/views.py:849
+msgid "Invalid content ID provided."
+msgstr "Надано недійсний ідентифікатор вмісту."
+
+#: admin_pages/views.py:855
+msgid "Content ID not found."
+msgstr "Content ID не знайдено."
+
+#: locations/models.py:29
+msgid "Division Title"
+msgstr "Назва підрозділу"
+
+#: locations/models.py:30
+#, fuzzy
+#| msgid "Subscription ID:"
+msgid "Description"
+msgstr "Ідентифікатор підписки:"
+
+#: locations/models.py:38 locations/models.py:75
+msgid "Division"
+msgstr "Поділ"
+
+#: locations/models.py:39
+msgid "Divisions"
+msgstr "Підрозділи"
+
+#: locations/models.py:77 templates/locations/manage/division/list.html:67
+msgid "Branch Name"
+msgstr "Назва відділення"
+
+#: locations/models.py:79 templates/locations/manage/division/list.html:108
+msgid "Address"
+msgstr "Адреса"
+
+#: locations/models.py:81
+msgid "Formatted Address"
+msgstr "Відформатована адреса"
+
+#: locations/models.py:83 templates/locations/manage/division/list.html:99
+msgid "Postcode"
+msgstr "Поштовий індекс"
+
+#: locations/models.py:90 templates/locations/manage/division/list.html:77
+msgid "Parish Priest"
+msgstr "Парох"
+
+#: locations/models.py:98 templates/locations/manage/division/list.html:88
+msgid "Branch Chair"
+msgstr "Голова відділення"
+
+#: locations/models.py:106
+msgid "Branch Secretary"
+msgstr "Секретар відділення"
+
+#: locations/models.py:109
+msgid "Other Details"
+msgstr "Інші деталі"
+
+#: locations/models.py:111
+msgid "URL"
+msgstr "URL"
+
+#: locations/models.py:114
+msgid "Latitude"
+msgstr "Широта"
+
+#: locations/models.py:115
+msgid "Longitude"
+msgstr "Довгота"
+
+#: locations/models.py:122 locations/models.py:197 locations/models.py:226
+msgid "Branch"
+msgstr "Відділення"
+
+#: locations/models.py:123
+msgid "Branches"
+msgstr "Відділення"
+
+#: locations/models.py:166 templates/public_p/home.html:588
+msgid "First Name"
+msgstr "Ім'я"
+
+#: locations/models.py:168 templates/public_p/home.html:592
+msgid "Last Name"
+msgstr "Прізвище"
+
+#: locations/models.py:171
+msgid "Person"
+msgstr "Особа"
+
+#: locations/models.py:172
+msgid "People"
+msgstr "Люди"
+
+#: locations/models.py:200
+msgid "Phone Number"
+msgstr "Номер телефону"
+
+#: locations/models.py:208
+msgid "Phone"
+msgstr "Телефон"
+
+#: locations/models.py:209
+msgid "Phones"
+msgstr "Телефони"
+
+#: locations/models.py:228 templates/public_p/home.html:596
+msgid "Email Address"
+msgstr "Адреса електронної пошти"
+
+#: locations/models.py:231
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: locations/models.py:232
+msgid "Emails"
+msgstr "електронні листи"
+
+#: payments/forms.py:9
+msgid "or enter your own amount (£):"
+msgstr "або введіть власну суму (£):"
+
+#: templates/account/email/base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Привіт від %(site_name)s!"
+
+#: templates/account/email/base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Дякуємо, що користуєтеся %(site_name)s!\n"
+"%(site_domain)s"
+
+#: templates/account/email/email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this email because user %(user_display)s has given your "
+"email address to register an account on %(site_domain)s."
+msgstr ""
+"Ви отримали цей лист, тому що користувач %(user_display)s вказав вашу "
+"електронну адресу для реєстрації облікового запису на %(site_domain)s."
+
+#: templates/account/email/email_confirmation_message.txt:7
+msgid ""
+"Your email verification code is listed below. Please enter it in your open "
+"browser window."
+msgstr ""
+"Ваш код підтвердження електронної пошти наведений нижче. Будь ласка, введіть "
+"його у відкритому вікні браузера."
+
+#: templates/account/email/email_confirmation_message.txt:9
+#, python-format
+msgid "To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+"Щоб підтвердити, що це правильно, перейдіть за посиланням %(activate_url)s"
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your Email Address"
+msgstr "Будь ласка, підтвердьте свою електронну адресу"
+
+#: templates/account/email_confirm.html:6
+#: templates/account/email_confirm.html:10
+msgid "Confirm Email Address"
+msgstr "Підтвердити електронну адресу"
+
+#: templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
+"address for user %(user_display)s."
+msgstr ""
+"Будь ласка, підтвердіть, що %(email)s є електронною адресою користувача "
+"%(user_display)s."
+
+#: templates/account/email_confirm.html:28
+#, python-format
+msgid ""
+"Unable to confirm %(email)s because it is already confirmed by a different "
+"account."
+msgstr ""
+"Неможливо підтвердити %(email)s, оскільки вона вже підтверджена іншим "
+"обліковим записом."
+
+#: templates/account/email_confirm.html:34
+#, python-format
+msgid ""
+"This email confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new email confirmation request</a>."
+msgstr ""
+"Цей посилання для підтвердження електронної пошти минув або є недійсним. "
+"Будь ласка, надішліть <a href=\"%(email_url)s\"> новий запит на "
+"підтвердження електронної пошти."
+
+#: templates/account/login.html:6 templates/account/login.html:11
+#: templates/account/login.html:15 templates/public_p/public_base.html:392
+msgid "Log In"
+msgstr "Увійти"
+
+#: templates/account/password_change.html:33
+#: templates/account/password_change.html:37
+#: templates/account/password_change.html:46
+#: templates/account/password_reset_from_key.html:44
+#: templates/account/password_reset_from_key.html:52
+#: templates/account/password_reset_from_key.html:66
+#: templates/account/password_reset_from_key_done.html:20
+#: templates/account/password_reset_from_key_done.html:24
+msgid "Change Password"
+msgstr "Змінити пароль"
+
+#: templates/account/password_change.html:47
+msgid "Forgot Password?"
+msgstr "Забули пароль?"
+
+#: templates/account/password_reset.html:37
+#: templates/account/password_reset.html:41
+#: templates/account/password_reset_done.html:26
+#: templates/account/password_reset_done.html:30
+msgid "Password Reset"
+msgstr "Скидання пароля"
+
+#: templates/account/password_reset.html:48
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr ""
+"Забули свій пароль? Введіть свою електронну адресу нижче, і ми надішлемо вам "
+"листа для його скидання."
+
+#: templates/account/password_reset.html:58
+#: templates/account/password_reset_done.html:43
+msgid "Reset My Password"
+msgstr "Скинути мій пароль"
+
+#: templates/account/password_reset.html:63
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+"Будь ласка, зв’яжіться з нами, якщо у вас виникли труднощі зі скиданням "
+"пароля."
+
+#: templates/account/password_reset_done.html:37
+msgid ""
+"We have emailed you. If you have not received it, please check your spam "
+"folder. Otherwise, contact us if you do not receive it in a few minutes."
+msgstr ""
+"Ми надіслали вам листа. Якщо ви його не отримали, перевірте папку зі спамом. "
+"В іншому випадку, зв’яжіться з нами, якщо не отримаєте його за кілька хвилин."
+
+#: templates/account/password_reset_from_key.html:50
+msgid "Bad Token"
+msgstr "Невірний токен"
+
+#: templates/account/password_reset_from_key.html:59
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"Посилання для зміни пароля було недійсним, можливо, тому, що воно вже було "
+"використано. Надішліть запит на <a href=\"%(passwd_reset_url)s\">скидання "
+"нового пароля</a>."
+
+#: templates/account/password_reset_from_key_done.html:25
+msgid "Your password has been changed successfully."
+msgstr "Ваш пароль успішно змінено."
+
+#: templates/admin/base_site.html:6
+msgid "Return to site"
+msgstr "Повернутися на сайт"
+
+#: templates/admin_p/admin_base.html:10
+msgid "UWC Admin"
+msgstr "UWC Адмін"
+
+#: templates/admin_p/admin_base.html:30 templates/public_p/public_base.html:352
+msgid "The Ukrainian"
+msgstr "Український"
+
+#: templates/admin_p/admin_base.html:31
+msgid "Welcome"
+msgstr "Привітальний"
+
+#: templates/admin_p/admin_base.html:32
+msgid "Centre"
+msgstr "Центр"
+
+#: templates/admin_p/admin_base.html:43 templates/admin_p/admin_base.html:148
+msgid "Offcanvas"
+msgstr "Випадна панель"
+
+#: templates/admin_p/admin_base.html:47
+msgid "Dashboard"
+msgstr "Панель управління"
+
+#: templates/admin_p/admin_base.html:55 templates/public_p/locations.html:3
+#: templates/public_p/public_base.html:73
+#: templates/public_p/public_base.html:217
+#: templates/public_p/public_base.html:377
+msgid "Locations"
+msgstr "Розташування"
+
+#: templates/admin_p/admin_base.html:58
+msgid "Add Location"
+msgstr "Додати місцезнаходження"
+
+#: templates/admin_p/admin_base.html:65
+msgid "Panel"
+msgstr "Панель"
+
+#: templates/admin_p/admin_base.html:128
+msgid "Change password"
+msgstr "Змінити пароль"
+
+#: templates/admin_p/admin_base.html:134
+msgid "Log Out"
+msgstr "Вийти"
+
+#: templates/admin_p/global_search.html:7
+msgid "Global Search"
+msgstr "Глобальний пошук"
+
+#: templates/admin_p/global_search.html:10
+#: templates/public_p/public_search.html:13
+msgid "Search Results"
+msgstr "Результати пошуку"
+
+#: templates/admin_p/global_search.html:25
+#: templates/public_p/public_search.html:29
+msgid "Page:"
+msgstr "сторінка:"
+
+#: templates/admin_p/global_search.html:30
+#: templates/public_p/public_search.html:34
+msgid "Section:"
+msgstr "Розділ:"
+
+#: templates/admin_p/global_search.html:35
+#: templates/public_p/public_search.html:39
+msgid "Text:"
+msgstr "Текст:"
+
+#: templates/admin_p/global_search.html:41
+#: templates/public_p/public_search.html:44
+msgid "File:"
+msgstr "Файл:"
+
+#: templates/admin_p/global_search.html:46
+#: templates/public_p/public_search.html:49
+msgid "Image:"
+msgstr "Зображення:"
+
+#: templates/admin_p/global_search.html:51
+#: templates/public_p/public_search.html:54
+msgid "Video:"
+msgstr "Відео:"
+
+#: templates/admin_p/global_search.html:56
+#: templates/public_p/public_search.html:59
+msgid "URL:"
+msgstr "URL:"
+
+#: templates/admin_p/global_search.html:61
+#: templates/public_p/public_search.html:64
+#: templates/public_p/public_search.html:89
+msgid "Division:"
+msgstr "Відділ:"
+
+#: templates/admin_p/global_search.html:66
+#: templates/public_p/public_search.html:69
+#: templates/public_p/public_search.html:85
+msgid "Branch:"
+msgstr "Відділення:"
+
+#: templates/admin_p/global_search.html:70
+#: templates/public_p/public_search.html:73
+msgid "Address:"
+msgstr "Адреса:"
+
+#: templates/admin_p/global_search.html:75
+#: templates/public_p/public_search.html:78
+msgid "Person:"
+msgstr "Особа:"
+
+#: templates/admin_p/global_search.html:83
+msgid "Donor:"
+msgstr "Донор:"
+
+#: templates/admin_p/global_search.html:91
+msgid "Donation:"
+msgstr "Пожертва:"
+
+#: templates/admin_p/global_search.html:107
+#: templates/admin_p/global_search.html:111
+#: templates/admin_p/manage/section/search.html:20
+#: templates/public_p/public_search.html:107
+#: templates/public_p/public_search.html:110
+msgid "No results found."
+msgstr "Результатів не знайдено."
+
+#: templates/admin_p/manage/page/form.html:14
+#: templates/admin_p/manage/page/form.html:23
+msgid "Create a new Page"
+msgstr "Створити нову сторінку"
+
+#: templates/admin_p/manage/page/form.html:27
+msgid "Page info"
+msgstr "Інформація про сторінку"
+
+#: templates/admin_p/manage/page/form.html:63
+msgid "Save page"
+msgstr "Зберегти сторінку"
+
+#: templates/admin_p/manage/page/list.html:12
+#: templates/admin_p/manage/page/list.html:15
+msgid "All pages"
+msgstr "Всі сторінки"
+
+#: templates/admin_p/manage/page/list.html:22
+msgid "Edit page"
+msgstr "Редагувати сторінку"
+
+#: templates/admin_p/manage/page/list.html:26
+msgid "Delete page"
+msgstr "Видалити сторінку"
+
+#: templates/admin_p/manage/page/list.html:32
+#: templates/admin_p/manage/section/content_list.html:103
+msgid "View sections"
+msgstr "Переглянути розділи"
+
+#: templates/admin_p/manage/page/list.html:34
+#: templates/admin_p/manage/section/content_list.html:105
+msgid "Edit sections"
+msgstr "Редагувати розділи"
+
+#: templates/admin_p/manage/page/list.html:43
+msgid "View contents"
+msgstr "Переглянути вміст"
+
+#: templates/admin_p/manage/page/list.html:45
+msgid "Manage contents"
+msgstr "Керувати вмістом"
+
+#: templates/admin_p/manage/page/list.html:62
+msgid "Create new page"
+msgstr "Створити нову сторінку"
+
+#: templates/admin_p/manage/section/content_list.html:120
+msgid "Item Content ID:"
+msgstr "ID вмісту елемента:"
+
+#: templates/admin_p/manage/section/search.html:5
+msgid "Search "
+msgstr "Пошук"
+
+#: templates/admin_p/manage/section/search.html:24
+msgid "Search for sections"
+msgstr "Пошук розділів"
+
+#: templates/locations/manage/branch/form.html:37
+#: templates/locations/manage/person/list.html:12
+msgid "Back to Division list"
+msgstr "Назад до списку підрозділів"
+
+#: templates/locations/manage/branch/form.html:62
+msgid "List all"
+msgstr "Перерахувати всіх"
+
+#: templates/locations/manage/branch/form.html:66
+#: templates/locations/manage/person/list.html:17
+msgid "Add New Person"
+msgstr "Додати нову особу"
+
+#: templates/locations/manage/division/list.html:13
+#: templates/locations/manage/division/list.html:180
+msgid "Create Division"
+msgstr "Створити підрозділ"
+
+#: templates/locations/manage/division/list.html:46
+msgid "Add new location"
+msgstr "Додати нове місце"
+
+#: templates/locations/manage/division/list.html:50
+msgid "Edit"
+msgstr "Редагувати"
+
+#: templates/locations/manage/division/list.html:54
+msgid "Delete"
+msgstr "Видалити"
+
+#: templates/locations/manage/division/list.html:117
+msgid "Status"
+msgstr "Статус"
+
+#: templates/locations/manage/division/list.html:151
+msgid "Hidden"
+msgstr "Прихований"
+
+#: templates/locations/manage/division/list.html:153
+msgid "Displayed"
+msgstr "Відображається"
+
+#: templates/locations/manage/division/list.html:155
+msgid "Unknown"
+msgstr "Невідомий"
+
+#: templates/locations/manage/division/list.html:165
+msgid "No branches available for this division."
+msgstr "Немає філій для цього підрозділу."
+
+#: templates/locations/manage/division/list.html:178
+msgid "No divisions available. Please create one."
+msgstr "Немає поділів. Будь ласка, створіть його."
+
+#: templates/locations/manage/person/list.html:8
+msgid "Alphabetical Index"
+msgstr "Алфавітний покажчик"
+
+#: templates/payments/cancel.html:4
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#: templates/payments/cancel.html:8
+msgid "Payment Canceled"
+msgstr "Платіж скасовано"
+
+#: templates/payments/cancel.html:9
+msgid "You have canceled the payment process."
+msgstr "Ви скасували процес оплати."
+
+#: templates/payments/donate.html:6 templates/payments/donate.html:52
+#: templates/public_p/public_base.html:141
+#: templates/public_p/public_base.html:285
+msgid "Donate"
+msgstr "Пожертвуйте"
+
+#: templates/payments/donate.html:18
+msgid "Choose Regular Donations"
+msgstr "Виберіть Регулярні пожертви"
+
+#: templates/payments/donate.html:24
+msgid "Donation Amount"
+msgstr "Сума пожертви"
+
+#: templates/payments/donate.html:31
+msgid "Choose Regularity"
+msgstr "Виберіть Регулярність"
+
+#: templates/payments/donate.html:33
+msgid "Weekly"
+msgstr "Щотижня"
+
+#: templates/payments/donate.html:34
+msgid "Monthly"
+msgstr "Щомісяця"
+
+#: templates/payments/donate.html:35
+msgid "Yearly"
+msgstr "щорічно"
+
+#: templates/payments/donate.html:44
+msgid "Set Up Regular Donation"
+msgstr "Налаштуйте регулярне пожертвування"
+
+#: templates/payments/donate.html:54
+msgid "Select a one-time donation amount"
+msgstr "Виберіть суму одноразової пожертви"
+
+#: templates/payments/donate.html:154
+msgid "Donate via PayPal"
+msgstr "Пожертвуйте через PayPal"
+
+#: templates/payments/donor.html:11
+msgid "Back to Search Results"
+msgstr "Назад до результатів пошуку"
+
+#: templates/payments/donor.html:18
+msgid "Donation History"
+msgstr "Історія пожертв"
+
+#: templates/payments/donor.html:24
+msgid "Date"
+msgstr "Дата"
+
+#: templates/payments/donor.html:25
+msgid "Transaction ID"
+msgstr "Ідентифікатор транзакції"
+
+#: templates/payments/donor.html:26
+msgid "Amount (£)"
+msgstr "Сума (£)"
+
+#: templates/payments/donor.html:38
+msgid "Total"
+msgstr "Всього"
+
+#: templates/payments/donor.html:44
+msgid "No donations found for this donor."
+msgstr "Для цього донора не знайдено пожертв."
+
+#: templates/payments/error.html:5
+msgid "Error"
+msgstr "Помилка"
+
+#: templates/payments/error.html:8
+msgid "Error Processing Payment"
+msgstr "Помилка обробки платежу"
+
+#: templates/payments/subscription_cancel.html:5
+msgid "Subscription Cancelled"
+msgstr "Підписку скасовано"
+
+#: templates/payments/subscription_cancel.html:8
+msgid "Subscription Canceled"
+msgstr "Підписку скасовано"
+
+#: templates/payments/subscription_cancel.html:9
+msgid "You have canceled the subscription process."
+msgstr "Ви скасували процес підписки."
+
+#: templates/payments/subscription_error.html:5
+msgid "Subscription Error"
+msgstr "Помилка підписки"
+
+#: templates/payments/subscription_error.html:8
+msgid "Error Processing Subscription"
+msgstr "Помилка обробки підписки"
+
+#: templates/payments/subscription_success.html:5
+msgid "Subscription Successful"
+msgstr "Підписка успішна"
+
+#: templates/payments/subscription_success.html:8
+msgid "Welcome to Our Community!"
+msgstr "Ласкаво просимо до нашої спільноти!"
+
+#: templates/payments/subscription_success.html:10
+#: templates/payments/success.html:10
+msgid "Dear"
+msgstr "Дорогий"
+
+#: templates/payments/subscription_success.html:13
+msgid "Thank you for subscribing to"
+msgstr "Дякуємо за підписку на"
+
+#: templates/payments/subscription_success.html:14
+msgid ""
+"Your support means the world to us and helps us continue making a positive "
+"impact."
+msgstr ""
+"Ваша підтримка важлива для нас і допомагає нам продовжувати позитивний вплив."
+
+#: templates/payments/subscription_success.html:17
+msgid "Here are the details of your subscription:"
+msgstr "Ось деталі вашої підписки:"
+
+#: templates/payments/subscription_success.html:21
+msgid "Subscription ID:"
+msgstr "Ідентифікатор підписки:"
+
+#: templates/payments/subscription_success.html:24
+msgid "Plan:"
+msgstr "план:"
+
+#: templates/payments/subscription_success.html:27
+msgid "Amount:"
+msgstr "сума:"
+
+#: templates/payments/subscription_success.html:30
+msgid "Billing Frequency:"
+msgstr "Періодичність виставлення рахунків:"
+
+#: templates/payments/subscription_success.html:31
+msgid "Every"
+msgstr "кожен"
+
+#: templates/payments/subscription_success.html:35
+msgid "Status:"
+msgstr "Статус:"
+
+#: templates/payments/subscription_success.html:39
+msgid ""
+"If you have any questions or need assistance, feel free to contact us at any "
+"time."
+msgstr ""
+"Якщо у вас виникли запитання або потрібна допомога, зв’яжіться з нами в будь-"
+"який час."
+
+#: templates/payments/subscription_success.html:42
+msgid ""
+"Thank you for being a valued supporter. Together, we can achieve amazing "
+"things!"
+msgstr ""
+"Дякуємо, що ви цінуєте прихильника. Разом ми можемо досягти неймовірних "
+"речей!"
+
+#: templates/payments/subscription_success.html:45
+msgid "Warm regards,"
+msgstr "З повагою,"
+
+#: templates/payments/subscription_success.html:46
+msgid "The Team"
+msgstr "Команда"
+
+#: templates/payments/success.html:5
+msgid "Success"
+msgstr "Успіх"
+
+#: templates/payments/success.html:8
+msgid "Thank you for your donation!"
+msgstr "Дякуємо за вашу пожертву!"
+
+#: templates/payments/success.html:11
+msgid "thank you for your generous donation of"
+msgstr "дякуємо за вашу щедру пожертву"
+
+#: templates/payments/success.html:14
+msgid "Transaction ID:"
+msgstr "ID транзакції:"
+
+#: templates/payments/success.html:17
+msgid "Date:"
+msgstr "Дата:"
+
+#: templates/public_p/404.html:8
+msgid "Page Not Found"
+msgstr "Сторінка не знайдена"
+
+#: templates/public_p/404.html:13
+msgid "404—Page Not Found"
+msgstr "404 — сторінку не знайдено"
+
+#: templates/public_p/404.html:14
+msgid ""
+"We're sorry: the page you are looking for does not exist or is not available "
+"at the moment."
+msgstr ""
+"Нам дуже шкода: сторінка, яку ви шукаєте, не існує або недоступна на даний "
+"момент."
+
+#: templates/public_p/404.html:15
+msgid "Go Back to Home"
+msgstr "Повернутися додому"
+
+#: templates/public_p/base_content.html:44
+msgid "Download File"
+msgstr ""
+
+#: templates/public_p/base_content.html:56 templates/public_p/contact.html:117
+#: templates/public_p/contact.html:184 templates/public_p/get-involved.html:52
+#: templates/public_p/get-involved.html:86
+#: templates/public_p/our-distinguished-guests.html:56
+#: templates/public_p/our-distinguished-guests.html:90
+#: templates/public_p/our-impact.html:52 templates/public_p/our-impact.html:86
+#: templates/public_p/schedules-and-workshops.html:52
+#: templates/public_p/schedules-and-workshops.html:86
+#: templates/public_p/sponsors-hosts.html:50
+#: templates/public_p/sponsors-hosts.html:84 templates/public_p/test.html:38
+#: templates/public_p/test.html:107 templates/public_p/test.html:143
+#: templates/public_p/uwc-in-the-news.html:52
+#: templates/public_p/uwc-in-the-news.html:86
+msgid "Click here to open the link"
+msgstr "Натисніть тут, щоб відкрити посилання"
+
+#: templates/public_p/base_content.html:69
+msgid "No content available for this page."
+msgstr "Для цієї сторінки немає вмісту."
+
+#: templates/public_p/base_content.html:75 templates/public_p/contact.html:238
+#: templates/public_p/get-involved.html:110
+#: templates/public_p/our-distinguished-guests.html:114
+#: templates/public_p/our-impact.html:110
+#: templates/public_p/schedules-and-workshops.html:110
+#: templates/public_p/sponsors-hosts.html:108 templates/public_p/test.html:192
+#: templates/public_p/uwc-in-the-news.html:110
+msgid "Back to Home"
+msgstr "Назад додому"
+
+#: templates/public_p/contact.html:42 templates/public_p/contact.html:79
+#: templates/public_p/contact.html:111 templates/public_p/contact.html:144
+#: templates/public_p/contact.html:178 templates/public_p/contact.html:217
+#: templates/public_p/get-involved.html:46
+#: templates/public_p/get-involved.html:80
+#: templates/public_p/our-distinguished-guests.html:50
+#: templates/public_p/our-distinguished-guests.html:84
+#: templates/public_p/our-impact.html:46 templates/public_p/our-impact.html:80
+#: templates/public_p/schedules-and-workshops.html:46
+#: templates/public_p/schedules-and-workshops.html:80
+#: templates/public_p/sponsors-hosts.html:44
+#: templates/public_p/sponsors-hosts.html:78 templates/public_p/test.html:32
+#: templates/public_p/test.html:65 templates/public_p/test.html:100
+#: templates/public_p/test.html:137 templates/public_p/test.html:172
+#: templates/public_p/uwc-in-the-news.html:46
+#: templates/public_p/uwc-in-the-news.html:80
+msgid "Your browser does not support the video tag."
+msgstr "Ваш браузер не підтримує тег video."
+
+#: templates/public_p/contact.html:234 templates/public_p/get-involved.html:106
+#: templates/public_p/our-distinguished-guests.html:110
+#: templates/public_p/our-impact.html:106
+#: templates/public_p/schedules-and-workshops.html:106
+#: templates/public_p/sponsors-hosts.html:104 templates/public_p/test.html:188
+#: templates/public_p/uwc-in-the-news.html:106
+msgid "No sections available."
+msgstr "Немає доступних розділів."
+
+#: templates/public_p/home.html:70 templates/public_p/home.html:240
+#: templates/public_p/home.html:617
+msgid "Donate now"
+msgstr "Пожертвуйте зараз"
+
+#: templates/public_p/home.html:83
+msgid "Need help applying for Ukraine Permission Extension scheme?"
+msgstr ""
+"Потрібна допомога в поданні заявки за Схемою продовження дозволу для "
+"українців?"
+
+#: templates/public_p/home.html:86
+msgid "Book your slot here."
+msgstr "Забронюйте свій слот тут."
+
+#: templates/public_p/home.html:118 templates/public_p/home.html:177
+#: templates/public_p/home.html:302 templates/public_p/home.html:346
+#: templates/public_p/home.html:420 templates/public_p/home.html:464
+#: templates/public_p/home.html:538
+msgid "Learn More"
+msgstr "Дізнайтеся більше"
+
+#: templates/public_p/home.html:600
+msgid "Subscribe"
+msgstr "Підпишіться"
+
+#: templates/public_p/public_base.html:10
+msgid "Ukrainian Welcome Centre"
+msgstr "Український Привітальний Центр"
+
+#: templates/public_p/public_base.html:56
+#: templates/public_p/public_base.html:199
+msgid "Home"
+msgstr "Головна"
+
+#: templates/public_p/public_base.html:61
+#: templates/public_p/public_base.html:205
+#: templates/public_p/public_base.html:373
+msgid "Who We Are"
+msgstr "Хто ми"
+
+#: templates/public_p/public_base.html:64
+#: templates/public_p/public_base.html:208
+#: templates/public_p/public_base.html:375
+#: templates/public_p/public_base.html:423
+msgid "About Us"
+msgstr "Про нас"
+
+#: templates/public_p/public_base.html:66
+#: templates/public_p/public_base.html:211
+msgid "Our Impact"
+msgstr "Наш вплив"
+
+#: templates/public_p/public_base.html:68
+#: templates/public_p/public_base.html:213
+#: templates/public_p/public_base.html:376
+#, fuzzy
+#| msgid "Ukrainian"
+msgid "Ukrainian Heritage"
+msgstr "Українська спадщина"
+
+#: templates/public_p/public_base.html:79
+#: templates/public_p/public_base.html:224
+#: templates/public_p/public_base.html:381
+msgid "For Refugees"
+msgstr "Для біженців"
+
+#: templates/public_p/public_base.html:82
+#: templates/public_p/public_base.html:228
+#: templates/public_p/public_base.html:383
+msgid "Pre-Arrivals & Visas"
+msgstr "Попереднє прибуття та візи"
+
+#: templates/public_p/public_base.html:85
+#: templates/public_p/public_base.html:231
+#: templates/public_p/public_base.html:384
+msgid "After You're Here"
+msgstr "Після того як ти тут"
+
+#: templates/public_p/public_base.html:88
+#: templates/public_p/public_base.html:234
+#: templates/public_p/public_base.html:385
+#, fuzzy
+#| msgid "Visas"
+msgid "Visas & UPE"
+msgstr "Візи та UPE"
+
+#: templates/public_p/public_base.html:90
+#: templates/public_p/public_base.html:236
+#: templates/public_p/public_base.html:386
+msgid "Important Contacts"
+msgstr "Важливі контакти"
+
+#: templates/public_p/public_base.html:96
+#: templates/public_p/public_base.html:242
+#: templates/public_p/public_base.html:402
+msgid "Sponsor a Refugee"
+msgstr "Спонсоруйте біженця"
+
+#: templates/public_p/public_base.html:101
+#: templates/public_p/public_base.html:247
+#: templates/public_p/public_base.html:405
+msgid "News & Events"
+msgstr "Новини та події"
+
+#: templates/public_p/public_base.html:104
+#: templates/public_p/public_base.html:251
+#: templates/public_p/public_base.html:407
+msgid "Schedule & Workshops"
+msgstr "Розклад і семінари"
+
+#: templates/public_p/public_base.html:107
+#: templates/public_p/public_base.html:254
+msgid "UWC in the News"
+msgstr "УЦП в Новинах"
+
+#: templates/public_p/public_base.html:113
+#: templates/public_p/public_base.html:259
+msgid "Get Involved"
+msgstr "Беріть участь"
+
+#: templates/public_p/public_base.html:118
+#: templates/public_p/public_base.html:263
+msgid "Contact"
+msgstr "Контакт"
+
+#: templates/public_p/public_base.html:146
+#: templates/public_p/public_base.html:291
+#: templates/public_p/public_base.html:411
+msgid "Contact Us"
+msgstr "Зв'яжіться з нами"
+
+#: templates/public_p/public_base.html:192
+msgid "Menu"
+msgstr "Меню"
+
+#: templates/public_p/public_base.html:353
+msgid "Welcome Centre"
+msgstr "Привітальний Центр"
+
+#: templates/public_p/public_base.html:370
+msgid "Support Us"
+msgstr "Підтримайте нас"
+
+#: templates/public_p/public_base.html:397
+msgid "Staff Only"
+msgstr "Лише персонал"
+
+#: templates/public_p/public_base.html:426
+msgid "Feedback"
+msgstr "Зворотній зв'язок"
+
+#: templates/public_p/public_base.html:429
+msgid "Legal"
+msgstr "Юридичний"
+
+#: templates/public_p/public_base.html:432
+msgid "The Ukrainian Welcome Centre"
+msgstr "Український Привітальний Центр"
+
+#: templates/public_p/public_base.html:433
+msgid "a project of the Eparchy of the Holy Family of London"
+msgstr "проект Лондонської єпархії Пресвятої Родини"
+
+#: templates/public_p/public_base.html:434
+msgid "registered charity number"
+msgstr "зареєстрований номер благодійної організації"
+
+#: templates/public_p/public_base.html:446
+msgid "Find What You’re Looking For"
+msgstr "Знайдіть те, що шукаєте"
+
+#: templates/public_p/public_search.html:7
+msgid "Public Search"
+msgstr "Громадський пошук"
+
+#: templates/public_p/public_search.html:19
+msgid "Found"
+msgstr "знайдено"
+
+#: templates/public_p/public_search.html:19
+msgid "result"
+msgstr "результат"
+
+#: templates/public_p/public_search.html:20
+msgid "for"
+msgstr "для"
+
+#: templates/public_p/public_search.html:97
+msgid "No branches associated with this person."
+msgstr "Немає філій, пов’язаних із цією особою."
+
+#: uwc_proto/settings.py:163
+msgid "English"
+msgstr "English"
+
+#: uwc_proto/settings.py:163
+msgid "Ukrainian"
+msgstr "Українська"
+
+#~ msgid "How to Sponsor a Refugee"
+#~ msgstr "Як спонсорувати біженця"
+
+#~ msgid "Apply to Sponsor (UK Government)"
+#~ msgstr "Подати заявку на спонсорство (Уряд Великобританії)"
+
+#~ msgid "Our distinguished guests"
+#~ msgstr "Наші шановні гості"
+
+#~ msgid "Arrivals"
+#~ msgstr "Прибуття"
+
+#~ msgid "Immediate Essentials"
+#~ msgstr "Найнеобхідніше"
+
+#~ msgid "Essentials Upon Arrival"
+#~ msgstr "Найнеобхідніше після прибуття"
+
+#~ msgid "Long-Term Living"
+#~ msgstr "Довгострокове проживання"
+
+#~ msgid "Ukraine Permission Extension scheme (UPE)"
+#~ msgstr ""
+#~ "Схема продовження дозволу на перебування в межах українських програм (UPE)"
+
+#~ msgid "Help & Advice"
+#~ msgstr "Допомога та поради"
+
+#~ msgid "Our impact"
+#~ msgstr "Наш вплив"
+
+#~ msgid "Contact us"
+#~ msgstr "Зв'яжіться з нами"
+
+#~ msgid "About us"
+#~ msgstr "Про нас"
+
+#~ msgid "Help and Advice"
+#~ msgstr "Допомога та поради"
+
+#~ msgid "Need help applying for UPE?"
+#~ msgstr "Потрібна допомога з поданням заявок на UPE?"
+
+#~ msgid "News and Media"
+#~ msgstr "Новини та ЗМІ"
+
+#, python-brace-format
+#~ msgid "File '{value}' not found in storage: {e}"
+#~ msgstr "Файл \"{value}\" не знайдено в сховищі: {e}"
+
+#, python-brace-format
+#~ msgid "Previous file '{previous_file}' successfully deleted."
+#~ msgstr "Попередній файл \"{previous_file}\" успішно видалено."
+
+#, python-brace-format
+#~ msgid "Error deleting file '{previous_file}': {e}"
+#~ msgstr "Помилка видалення файлу \"{previous_file}\": {e}"
+
+#, python-brace-format
+#~ msgid "Draft file '{temp}' successfully deleted."
+#~ msgstr "Файл чернетки \"{temp}\" успішно видалено."
+
+#, python-brace-format
+#~ msgid "Error deleting draft file '{temp}': {e}"
+#~ msgstr "Помилка видалення файлу чернетки \"{temp}\": {e}"
+
+#~ msgid "saved"
+#~ msgstr "збережено"
+
+#~ msgid "OK"
+#~ msgstr "Добре"
+
+#, fuzzy
+#~ msgid "Section Draft Title"
+#~ msgstr "Заголовок розділу"
+
+#~ msgid "Menu Title"
+#~ msgstr "Назва меню"
+
+#~ msgid "Media URL"
+#~ msgstr "URL медіа"
+
+#~ msgid "Char"
+#~ msgstr "Елемент"
+
+#~ msgid "Logout"
+#~ msgstr "Вихід"
+
+#~ msgid "My Web Site"
+#~ msgstr "Мій веб-сайт"
+
+#, fuzzy
+#~ msgid "Text Value"
+#~ msgstr "Значення вмісту"
+
+#, fuzzy
+#~ msgid "Image URL"
+#~ msgstr "Зображення"
+
+#, fuzzy
+#~ msgid "Char Value"
+#~ msgstr "Значення вмісту"
+
+#~ msgid "Content Title"
+#~ msgstr "Назва вмісту"
+
+#~ msgid "Language"
+#~ msgstr "Мова"
+
+#~ msgid "Українська"
+#~ msgstr "Українська"
+
+#~ msgid "title"
+#~ msgstr "Назва"

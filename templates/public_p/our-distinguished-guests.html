@@ -1,0 +1,141 @@
+{% extends 'public_p/public_base.html' %}
+{% load filters %}
+{% load i18n %}
+
+{% block title %}{{ page.title|default:"Default Page" }}{% endblock title %}
+
+{% block content %}
+
+    <div class="py-5">
+
+    <h2 class="fs-1 fw-bolder mb-4">{{ page.title }}</h2>
+
+        {% for item in sections %}
+            <div class="section">
+{#                <h2>{{ item.section.title }}</h2>#}
+
+                <div class="row mb-5">
+                    {% if forloop.counter|divisibleby:2 %}
+                        {# чётная секция: изображения слева, текст справа #}
+                        <div class="col-md-6">
+                            {% for content in item.contents %}
+                                {% if content.type == 'image' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}" alt="{{ content.content.title }}"
+                                             class="img-fluid">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <h2>{{ item.section.title }}</h2>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        {% if content.content.content|is_email %}
+                                            <a href="mailto:{{ content.content.content }}">{{ content.content.content }}</a>
+                                        {% else %}
+                                            {{ content.content.content }}
+                                        {% endif %}
+                                    </div> <br>
+                                {% elif content.type == 'file' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <a href="{{ content.content.content.url }}"
+                                           download>{{ content.content.title }}</a>
+                                    </div>
+                                {% elif content.type == 'video' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <video controls>
+                                            <source src="{{ content.content.content }}" type="video/mp4">
+                                            {% trans 'Your browser does not support the video tag.' %}
+                                        </video>
+                                    </div>
+                                {% elif content.type == 'url' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <a href="{{ content.content.content }}" target="_blank">
+                                            🔗 {% trans "Click here to open the link" %}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {# нечётная секция: текст слева, изображения справа #}
+                        <div class="col-md-6">
+                            <h2>{{ item.section.title }}</h2>
+                            {% for content in item.contents %}
+                                {% if content.type == 'text' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        {% if content.content.content|is_email %}
+                                            <a href="mailto:{{ content.content.content }}">{{ content.content.content }}</a>
+                                        {% else %}
+                                            {{ content.content.content }}
+                                        {% endif %}
+                                    </div>
+                                {% elif content.type == 'file' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <a href="{{ content.content.content.url }}"
+                                           download>{{ content.content.title }}</a>
+                                    </div>
+                                {% elif content.type == 'video' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <video controls>
+                                            <source src="{{ content.content.content }}" type="video/mp4">
+                                            {% trans 'Your browser does not support the video tag.' %}
+                                        </video>
+                                    </div>
+                                {% elif content.type == 'url' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <a href="{{ content.content.content }}" target="_blank">
+                                            🔗 {% trans "Click here to open the link" %}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            {% for content in item.contents %}
+                                {% if content.type == 'image' %}
+                                    <div id="content-{{ content.content.id }}">
+                                        <img src="{{ content.content.content.url }}" alt="{{ content.content.title }}"
+                                             class="img-fluid">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>{% trans 'No sections available.' %}</p>
+        {% endfor %}
+
+        <p class="mt-5">
+            <a href="{% url 'page' slug='home' %}">{% trans 'Back to Home' %}</a>
+        </p>
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+    <script defer>
+        $(document).ready(function () {
+            const anchor = window.location.hash;
+
+            if (anchor) {
+                const target = $(anchor);
+
+                if (target.length) {
+                    target.addClass("bg-warning-subtle");
+
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - ($(window).height() / 2) + target.height() / 2
+                    }, 800);
+
+                    setTimeout(function () {
+                        target.removeClass("bg-warning-subtle");
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+{% endblock %}

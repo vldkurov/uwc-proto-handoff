@@ -1,0 +1,21 @@
+from modeltranslation.translator import register, TranslationOptions
+
+from .models import Division, Branch, Person
+
+
+@register(Division)
+class DivisionTranslationOptions(TranslationOptions):
+    fields = ("title", "description")
+
+
+@register(Branch)
+class BranchTranslationOptions(TranslationOptions):
+    fields = ("title", "address", "other_details")
+
+
+@register(Person)
+class PersonTranslationOptions(TranslationOptions):
+    fields = (
+        "first_name",
+        "last_name",
+    )

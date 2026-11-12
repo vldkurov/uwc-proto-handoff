@@ -1,0 +1,37 @@
+{% extends 'admin_p/admin_base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+    {% if object %}
+        Edit Division "{{ object.title }}"
+    {% else %}
+        Add a New Division
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <h1>
+        {% if object %}
+            Edit Division "{{ object.title }}"
+        {% else %}
+            Add a New Division
+        {% endif %}
+    </h1>
+    <div>
+        <h2>Division Info</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-flex align-items-center">
+                <p><input type="submit" value="Save Division" class="btn btn-outline-success me-2"></p>
+                {% if object and object.slug %}
+                    <p><a href="{% url 'locations:division_list' slug=object.slug %}"
+                          class="btn btn-outline-secondary">Cancel</a></p>
+                {% else %}
+                    <p><a href="{% url 'locations:division_create' %}"
+                          class="btn btn-outline-secondary">Cancel</a></p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

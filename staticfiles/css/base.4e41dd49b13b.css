@@ -1,0 +1,13 @@
+body {
+    min-height: 75rem;
+    padding-top: 7.0rem;
+}
+
+h1 {
+    color: blueviolet;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
