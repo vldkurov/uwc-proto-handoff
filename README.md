@@ -4,6 +4,8 @@ The handover package contains a clean application source snapshot, a sanitized P
 
 The website content remains in the form in which Stefan Dezyk created it.
 
-Download the ZIP file from the Releases section. The archive includes START_HERE.txt with setup and restore instructions. Existing user accounts, sessions, donation/payment records, original credentials, and the old repository history are excluded from the package.
+[Download the complete handover archive (~52 MB)](https://github.com/vldkurov/uwc-proto-handoff/releases/download/handoff-2026-11-12/uwc-handoff-2026-11-12.zip). No GitHub sign-in is required.
+
+Use the named handover asset, not GitHub's automatically generated Source code archives. The application source is inside the handover ZIP; this repository hosts the download. The archive includes START_HERE.txt with setup and restore instructions. Existing user accounts, sessions, donation/payment records, original credentials, and the old repository history are excluded from the package.
 
 Source snapshot: 5cbe1ad47b6bb2f209386500b8c44234c452e1cc. Both database restoration formats were checked against the packaged source and media.
